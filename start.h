@@ -1,0 +1,27 @@
+#ifndef START_H
+#define START_H
+#include <iostream>
+#include <string>
+#include <vector>
+#include <cmath>
+#include <iomanip>
+#include <algorithm>
+#include <sstream>
+
+class start
+{
+public:
+    start();
+    void first();
+    void second();
+    void third();
+    void fourth();
+    void fifth();
+    void six();
+    void seven();
+    void eight();
+    void nine();
+    void ten();
+};
+
+#endif // START_H
