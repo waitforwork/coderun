@@ -218,3 +218,73 @@ void start::nine()
     }
 }
 
+void start::ten()
+{
+    long long int a, b;
+    std::cin >> a >> b;
+    std::vector<long long int> HOD_mnog1;
+    std::vector<long long int> HOD_mnog2;
+    std::vector<long long int> HOK_mnog1;
+    long long int HOD=1, HOK=1;
+    int temp=1;
+    if(a<b) //на выходе получаем А больше Б
+    {
+        temp=a;
+        a=b;
+        b=temp;
+    }
+    for (long long int i=2;i<=a;i++)
+    {
+        while (a%i==0)
+        {
+            HOD_mnog1.push_back(i);
+            a=a/i;
+        }
+    }
+    for (long long int i=2;i<=b;i++)
+    {
+        while (b%i==0)
+        {
+            HOD_mnog2.push_back(i);
+            b=b/i;
+        }
+    }
+
+    for (auto i: HOD_mnog2)
+    {
+        i=*HOD_mnog2.begin();
+        auto result1 = std::find(HOD_mnog1.cbegin(), HOD_mnog1.cend(), i);
+        auto index1 = result1 - HOD_mnog1.cbegin();
+        auto result2 = std::find(HOD_mnog2.cbegin(), HOD_mnog2.cend(), i);
+        auto index2 = result2 - HOD_mnog2.cbegin();
+        if (result1 != HOD_mnog1.cend())
+        {
+            HOD*=i;
+            HOD_mnog1.erase(HOD_mnog1.begin()+index1);
+            HOD_mnog2.erase(HOD_mnog2.begin()+index2);
+            HOK_mnog1.push_back(i);
+        } else
+        {
+            HOK_mnog1.push_back(i);
+            HOD_mnog2.erase(HOD_mnog2.begin()+index2);
+        }
+
+    }
+    for(auto i:HOD_mnog1)
+    {
+        HOK_mnog1.push_back(i);
+    }
+
+    for(auto i:HOK_mnog1)
+    {
+        HOK*=i;
+    }
+
+    std::cout << HOD << " " << HOK << std::endl;
+}
+
+void start::eleven()
+{
+
+}
+
