@@ -7,6 +7,7 @@
 #include <iomanip>
 #include <algorithm>
 #include <sstream>
+#include <map>
 
 class start
 {
@@ -22,6 +23,7 @@ public:
     void eight();
     void nine();
     void ten();
+    void eleven();
 };
 
 #endif // START_H
