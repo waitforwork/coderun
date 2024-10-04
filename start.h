@@ -24,6 +24,7 @@ public:
     void nine();
     void ten();
     void eleven();
+    void twelve();
 };
 
 #endif // START_H
